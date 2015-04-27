@@ -1,12 +1,12 @@
 <?php namespace NukaCode\Html;
 
-use Collective\Html\HtmlBuilder;
+use Collective\Html\HtmlBuilder as CollectiveHtml;
 
 class BBCode {
 
     private $html;
 
-    public function __construct(HtmlBuilder $html)
+    public function __construct(CollectiveHtml $html)
     {
         $this->html = $html;
     }
@@ -210,7 +210,7 @@ class BBCode {
 			return $this->html->link($match[1], $match[1]);
 		};
 
-		// Replace "[url=http://domain/]A link[/url]" with "<a href="http://omain/">A link</a>"
+		// Replace "[url=DOMAIN]...[/url]" with "<a href="DOMAIN">...</a>"
 		$matches["/\[url=(.*?)\](.*?)\[\/url\]/is"] = function($match) {
 			return $this->html->link($match[1], $match[2]);
 		};
