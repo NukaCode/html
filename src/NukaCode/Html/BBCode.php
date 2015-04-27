@@ -1,12 +1,12 @@
 <?php namespace NukaCode\Html;
 
-use Collective\Html\HtmlBuilder;
+use Collective\Html\HtmlBuilder as CollectiveHtml;
 
 class BBCode {
 
     private $html;
 
-    public function __construct(HtmlBuilder $html)
+    public function __construct(CollectiveHtml $html)
     {
         $this->html = $html;
     }
