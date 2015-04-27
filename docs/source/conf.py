@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# NukaCode - Front End - Bootstrap documentation build configuration file, created by
+# NukaCode - HTML documentation build configuration file, created by
 # sphinx-quickstart on Thu Feb  5 00:12:23 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'NukaCode - Front End - Bootstrap'
+project = u'NukaCode - HTML'
 copyright = u'2015, stygian'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -202,7 +202,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'NukaCode-FrontEnd-Bootstrap.tex', u'NukaCode - Front End - Bootstrap Documentation',
+  ('index', 'NukaCode-FrontEnd-Bootstrap.tex', u'NukaCode - HTML Documentation',
    u'stygian', 'manual'),
 ]
 
@@ -232,7 +232,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'nukacode-frontend-bootstrap', u'NukaCode - Front End - Bootstrap Documentation',
+    ('index', 'nukacode-frontend-bootstrap', u'NukaCode - HTML Documentation',
      [u'stygian'], 1)
 ]
 
@@ -246,7 +246,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'NukaCode-FrontEnd-Bootstrap', u'NukaCode - Front End - Bootstrap Documentation',
+  ('index', 'NukaCode-FrontEnd-Bootstrap', u'NukaCode - HTML Documentation',
    u'stygian', 'NukaCode-FrontEnd-Bootstrap', 'One line description of project.',
    'Miscellaneous'),
 ]
