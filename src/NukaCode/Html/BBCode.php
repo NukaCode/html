@@ -33,23 +33,19 @@ class BBCode {
 		};
 		// Replace [thead]...[/thead] with <thead>...</thead>
 		$matches["/\[thead\](.*?)\[\/thead\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
-			return '<thead>'. $data .'</thead>';
+            return $this->stripBasic('thead', $match);
 		};
 		// Replace [tbody]...[/tbody] with <tbody>...</tbody>
 		$matches["/\[tbody\](.*?)\[\/tbody\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
-			return '<tbody>'. $data .'</tbody>';
+            return $this->stripBasic('tbody', $match);
 		};
 		// Replace [tr]...[/tr] with <tr>...</tr>
 		$matches["/\[tr\](.*?)\[\/tr\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
-			return '<tr>'. $data .'</tr>';
+            return $this->stripBasic('tr', $match);
 		};
 		// Replace [th]...[/th] with <th>...</th>
 		$matches["/\[th\](.*?)\[\/th\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
-			return '<th>'. $data .'</th>';
+            return $this->stripBasic('th', $match);
 		};
 		// Replace [th=CLASS]...[/th] with <th class="CLASS">...</th>
 		$matches["/\[th=(.*?)\](.*?)\[\/th\]/is"] = function($match) {
@@ -57,8 +53,7 @@ class BBCode {
 		};
 		// Replace [td]...[/td] with <td>...</td>
 		$matches["/\[td\](.*?)\[\/td\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
-			return '<td>'. $data .'</td>';
+            return $this->stripBasic('td', $match);
 		};
 		// Replace [td=CLASS]...[/td] with <td class="CLASS">...</td>
 		$matches["/\[td=(.*?)\](.*?)\[\/td\]/is"] = function($match) {
@@ -89,8 +84,7 @@ class BBCode {
 		};
 		// Replace [small]...[small] with <small>...</small>
 		$matches["/\[small\](.*?)\[\/small\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function() { return '<br />'; }, $match[1]);
-			return '<small>'. $data .'</small>';
+            return $this->stripBasic('small', $match);
 		};
 
 		// Replace [fullWidth]...[/fullWidth] with <div style="width: 100%;">...</div>
@@ -216,7 +210,7 @@ class BBCode {
 			return $this->html->link($match[1], $match[1]);
 		};
 
-		// Replace [url=http://www.google.com/]A link to google[/url] with <a href="http://www.google.com/">A link to google</a>
+		// Replace [url=http://domain/]A link[/url] with <a href="http://omain/">A link</a>
 		$matches["/\[url=(.*?)\](.*?)\[\/url\]/is"] = function($match) {
 			return $this->html->link($match[1], $match[2]);
 		};
@@ -240,6 +234,8 @@ class BBCode {
 
 		// Replace [list=1|a]...[/list] with <ul|ol><li>...</li></ul|ol>
 		$matches["/\[list=(1|a)\](.*?)\[\/list\]/is"] = function($match) {
+            $attr = [];
+
 			if($match[1] === 'a') {
 				$attr = ['style' => 'list-style-type: lower-alpha'];
 			}
@@ -268,4 +264,10 @@ class BBCode {
 		// Replace line-breaks
 		return preg_replace_callback("/\n\r?/", function() { return '<br />'; }, $data);
 	}
+
+    private function stripBasic($type, $match)
+    {
+        $data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
+        return '<'. $type .'>'. $data .'</'. $type .'>';
+    }
 }
