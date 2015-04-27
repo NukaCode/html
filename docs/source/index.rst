@@ -1,28 +1,28 @@
-Welcome to NukaCode Front End for Bootstrap!
+Welcome to NukaCode HTML!
 =======
-This package is designed to make using Twitter Bootstrap much easier in Laravel.  It requires Core, but otherwise, works out of the box.
+This package adds some common code on top of the Laravel Collective for use in the NukaCode front end packages.
 
 ======
 Badges
 ======
-.. image:: https://scrutinizer-ci.com/g/NukaCode/Front-End-Bootstrap/badges/quality-score.png?b=master
-    :target: https://scrutinizer-ci.com/g/NukaCode/Front-End-Bootstrap/?branch=Laravel5
-.. image:: https://scrutinizer-ci.com/g/NukaCode/Front-End-Bootstrap/badges/coverage.png?b=master
-    :target: https://scrutinizer-ci.com/g/NukaCode/Front-End-Bootstrap/?branch=master
-.. image:: https://travis-ci.org/NukaCode/Front-End-Bootstrap.svg?branch=master
-    :target: https://travis-ci.org/NukaCode/Front-End-Bootstrap
-.. image:: https://poser.pugx.org/nukacode/Front-End-Bootstrap/v/stable.svg
-    :target: https://packagist.org/packages/nukacode/Front-End-Bootstrap
-.. image:: https://poser.pugx.org/nukacode/Front-End-Bootstrap/downloads.svg
-    :target: https://packagist.org/packages/nukacode/Front-End-Bootstrap
-.. image:: https://poser.pugx.org/nukacode/Front-End-Bootstrap/license.svg
-    :target: https://packagist.org/packages/nukacode/Front-End-Bootstrap
+.. image:: https://scrutinizer-ci.com/g/NukaCode/Html/badges/quality-score.png?b=master
+    :target: https://scrutinizer-ci.com/g/NukaCode/Html/?branch=Laravel5
+.. image:: https://scrutinizer-ci.com/g/NukaCode/Html/badges/coverage.png?b=master
+    :target: https://scrutinizer-ci.com/g/NukaCode/Html/?branch=master
+.. image:: https://travis-ci.org/NukaCode/Html.svg?branch=master
+    :target: https://travis-ci.org/NukaCode/Html
+.. image:: https://poser.pugx.org/nukacode/Html/v/stable.svg
+    :target: https://packagist.org/packages/nukacode/Html
+.. image:: https://poser.pugx.org/nukacode/Html/downloads.svg
+    :target: https://packagist.org/packages/nukacode/Html
+.. image:: https://poser.pugx.org/nukacode/Html/license.svg
+    :target: https://packagist.org/packages/nukacode/Html
 =====
 
 Links
 -----
-* `Github <https://github.com/NukaCode/Front-End-Bootstrap>`_
-* `Packagist <https://packagist.org/packages/nukacode/bootstrap>`_
+* `Github <https://github.com/NukaCode/html>`_
+* `Packagist <https://packagist.org/packages/nukacode/html>`_
 
 Installation
 ------------
@@ -31,13 +31,6 @@ Installation
 
     install
 
-New CSS Classes
-------------
-.. toctree::
-    :maxdepth: 2
-
-    new-css
-
 Laravel Helpers
 ------------
 .. toctree::
@@ -45,11 +38,3 @@ Laravel Helpers
 
     html
     form
-
-Themes
-------
-.. toctree::
-    :maxdepth: 2
-
-    themes/admin
-    themes/main

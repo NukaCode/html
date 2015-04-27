@@ -88,10 +88,6 @@ Code
 
     {{ HTML::span('this is a span') }}
 
-Output
-^^^^^^^
-.. image:: images/html/span.png
-
 bold
 ~~~~~~~
 ============ ======== ======= =========================================
@@ -106,10 +102,6 @@ Code
 .. code:: HTML
 
     {{ HTML::bold('This is bold text') }}
-
-Output
-^^^^^^^
-.. image:: images/html/bold.png
 
 italic
 ~~~~~~~
@@ -126,10 +118,6 @@ Code
 
     {{ HTML::italic('This is italicized text') }}
 
-Output
-^^^^^^^
-.. image:: images/html/italic.png
-
 delete
 ~~~~~~~
 ============ ======== ======= =========================================
@@ -144,10 +132,6 @@ Code
 .. code:: HTML
 
     {{ HTML::delete('This is deleted text') }}
-
-Output
-^^^^^^^
-.. image:: images/html/delete.png
 
 strike
 ~~~~~~~
@@ -164,10 +148,6 @@ Code
 
     {{ HTML::strike('This text is striked out') }}
 
-Output
-^^^^^^^
-.. image:: images/html/strike.png
-
 insert
 ~~~~~~~
 ============ ======== ======= =========================================
@@ -182,10 +162,6 @@ Code
 .. code:: HTML
 
     {{ HTML::insert('This is inserted text') }}
-
-Output
-^^^^^^^
-.. image:: images/html/insert.png
 
 underline
 ~~~~~~~
@@ -202,10 +178,6 @@ Code
 
     {{ HTML::underline('This is underlined text') }}
 
-Output
-^^^^^^^
-.. image:: images/html/underline.png
-
 mark
 ~~~~~~~
 ============ ======== ======= =========================================
@@ -220,10 +192,6 @@ Code
 .. code:: HTML
 
     This is {{ HTML::mark('marked') }} text
-
-Output
-^^^^^^^
-.. image:: images/html/mark.png
 
 small
 ~~~~~~~
@@ -240,28 +208,6 @@ Code
 
     This is {{ HTML::small('small') }} text
 
-Output
-^^^^^^^
-.. image:: images/html/small.png
-
-lead
-~~~~~~~
-============ ======== ======= =========================================
-Parameters   Required Default Notes
-============ ======== ======= =========================================
-$value       Yes              The text inside the tag.
-============ ======== ======= =========================================
-
-Code
-^^^^^^^^
-.. code:: HTML
-
-    {{ HTML::lead('This text should stand out.') }}
-
-Output
-^^^^^^^
-.. image:: images/html/lead.png
-
 quote
 ~~~~~~~
 ============ ======== ======= =========================================
@@ -276,35 +222,6 @@ Code
 .. code:: HTML
 
     {{ HTML::quote('This is quoted text.', 'By Stygian') }}
-
-Output
-^^^^^^^
-.. image:: images/html/quote.png
-
-description
-~~~~~~~~~~~
-To use bootstrap description lists pass an array to this method.  The key will be the bolded text, the value will be the
-description text.
-
-============ ======== ======= =========================================
-Parameters   Required Default Notes
-============ ======== ======= =========================================
-$list        Yes              The text inside the tag.
-$attributes  No       []      Any attributes to add to the tag.
-============ ======== ======= =========================================
-
-Code
-^^^^^^^^
-.. code:: HTML
-
-    $list = ['Description lists' => 'A description list is perfect for defining terms.', 'Euismod' => 'something'];
-
-    {{ HTML::description($list) }}
-    {{ HTML::description($list, ['class' => 'dl-horizontal']) }}
-
-Output
-^^^^^^^
-.. image:: images/html/description.png
 
 Code
 ----------
@@ -323,32 +240,6 @@ Code
 .. code:: HTML
 
     This is {{ HTML::code('code') }} text
-
-Output
-^^^^^^^
-.. image:: images/html/code.png
-
-kbd
-~~~~~~~
-KBD can accept either a single key or an array of keys.  If it gets an array, it will automatically place the ``+`` between
-them.
-
-============ ======== ======= =========================================
-Parameters   Required Default Notes
-============ ======== ======= =========================================
-$keys        Yes              The keyboard key(S) that will be used.
-============ ======== ======= =========================================
-
-Code
-^^^^^^^^
-.. code:: HTML
-
-    {{ HTML::kbd('ctrl') }}
-    {{ HTML::kbd(['ctrl', 'alt', 'del']) }}
-
-Output
-^^^^^^^
-.. image:: images/html/kbd.png
 
 Iframes
 ----------
@@ -369,21 +260,3 @@ Code
 .. code:: HTML
 
     {{ HTML::iframe('http://google.com') }}
-
-embed
-~~~~~~~
-This will create a bootstrap iframe that uses responsive sizing.
-
-============ ======== ======= =========================================
-Parameters   Required Default Notes
-============ ======== ======= =========================================
-$url         Yes              The url the iframe will point to.
-$aspect      No       16by9   Valid aspects are 16by9 and 4by3.
-============ ======== ======= =========================================
-
-Code
-^^^^^^^^
-.. code:: HTML
-
-    {{ HTML::embed('http://google.com', '4by3') }}
-
