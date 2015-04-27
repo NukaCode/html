@@ -24,29 +24,31 @@ class BBCode {
 	 * @return	string
 	 */
 	public function parse($data) {
+        $matches = [];
+
 		// Replace [table]...[/table] with <table>...</table>
 		$matches["/\[table\](.*?)\[\/table\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<table class="table table-hover table-condensed table-striped">'. $data .'</table>';
 		};
 		// Replace [thead]...[/thead] with <thead>...</thead>
 		$matches["/\[thead\](.*?)\[\/thead\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<thead>'. $data .'</thead>';
 		};
 		// Replace [tbody]...[/tbody] with <tbody>...</tbody>
 		$matches["/\[tbody\](.*?)\[\/tbody\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<tbody>'. $data .'</tbody>';
 		};
 		// Replace [tr]...[/tr] with <tr>...</tr>
 		$matches["/\[tr\](.*?)\[\/tr\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<tr>'. $data .'</tr>';
 		};
 		// Replace [th]...[/th] with <th>...</th>
 		$matches["/\[th\](.*?)\[\/th\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<th>'. $data .'</th>';
 		};
 		// Replace [th=CLASS]...[/th] with <th class="CLASS">...</th>
@@ -55,7 +57,7 @@ class BBCode {
 		};
 		// Replace [td]...[/td] with <td>...</td>
 		$matches["/\[td\](.*?)\[\/td\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<td>'. $data .'</td>';
 		};
 		// Replace [td=CLASS]...[/td] with <td class="CLASS">...</td>
@@ -72,22 +74,22 @@ class BBCode {
 		};
 		// Replace [paragraph] with <dd>
 		$matches["/\[paragraph\](.*?)\[\/paragraph\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<p style="text-indent: 20px;">'. $data .'</p>';
 		};
 		// Replace [super]...[super] with <span style="vertical-align: super;">...</span>
 		$matches["/\[super\](.*?)\[\/super\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<span style="vertical-align: super;"><small>'. $data .'</small></span>';
 		};
 		// Replace [sub]...[sub] with <span style="vertical-align: sub;">...</span>
 		$matches["/\[sub\](.*?)\[\/sub\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return ''; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return ''; }, $match[1]);
 			return '<span style="vertical-align: sub;"><small>'. $data .'</small></span>';
 		};
 		// Replace [small]...[small] with <small>...</small>
 		$matches["/\[small\](.*?)\[\/small\]/is"] = function($match) {
-			$data = preg_replace_callback("/\n\r?/", function($match) { return '<br />'; }, $match[1]);
+			$data = preg_replace_callback("/\n\r?/", function() { return '<br />'; }, $match[1]);
 			return '<small>'. $data .'</small>';
 		};
 
@@ -102,45 +104,45 @@ class BBCode {
 		};
 
 		// Replace [dice] with dice image
-		$matches["/\[dice]/is"] = function($match) {
+		$matches["/\[dice]/is"] = function() {
 			return $this->html->image('img/dice_white.png', null, ['style' => 'width: 14px;']);
 		};
 
 		// Make the :D smiley
-		$matches["/\:D/is"] = function($match) {
+		$matches["/\:D/is"] = function() {
 			return $this->html->image('img/smileys/Big-Grin.png', null, ['style' => 'width: 18px;']);
 		};
 
 		// Make the :P smiley
-		$matches["/\:P/is"] = function($match) {
+		$matches["/\:P/is"] = function() {
 			return $this->html->image('img/smileys/Tongue.png', null, ['style' => 'width: 18px;']);
 		};
-		$matches["/\:p/is"] = function($match) {
+		$matches["/\:p/is"] = function() {
 			return $this->html->image('img/smileys/Tongue.png', null, ['style' => 'width: 18px;']);
 		};
 
 		// Make the :) smiley
-		$matches["/\:\)/is"] = function($match) {
+		$matches["/\:\)/is"] = function() {
 			return $this->html->image('img/smileys/smile.png', null, ['style' => 'width: 18px;']);
 		};
 
 		// Make the :( smiley
-		$matches["/\:\(/is"] = function($match) {
+		$matches["/\:\(/is"] = function() {
 			return $this->html->image('img/smileys/Sad.png', null, ['style' => 'width: 18px;']);
 		};
 
 		// Make the :'( smiley
-		$matches["/:'\(/is"] = function($match) {
+		$matches["/:'\(/is"] = function() {
 			return $this->html->image('img/smileys/Crying2.png', null, ['style' => 'width: 18px;']);
 		};
 
 		// Make the ;) smiley
-		$matches["/\;\)/is"] = function($match) {
+		$matches["/\;\)/is"] = function() {
 			return $this->html->image('img/smileys/Winking.png', null, ['style' => 'width: 18px;']);
 		};
 
 		// Make the <3 smiley
-		$matches["/<3/is"] = function($match) {
+		$matches["/<3/is"] = function() {
 			return $this->html->image('img/smileys/Heart.png', null, ['style' => 'width: 18px;']);
 		};
 
@@ -264,6 +266,6 @@ class BBCode {
 		}
 
 		// Replace line-breaks
-		return preg_replace_callback("/\n\r?/", function($match) { return '<br />'; }, $data);
+		return preg_replace_callback("/\n\r?/", function() { return '<br />'; }, $data);
 	}
 }
