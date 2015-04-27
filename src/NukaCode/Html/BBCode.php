@@ -210,7 +210,7 @@ class BBCode {
 			return $this->html->link($match[1], $match[1]);
 		};
 
-		// Replace "[url=http://domain/]A link[/url]" with "<a href="http://omain/">A link</a>"
+		// Replace "[url=DOMAIN]...[/url]" with "<a href="DOMAIN">...</a>"
 		$matches["/\[url=(.*?)\](.*?)\[\/url\]/is"] = function($match) {
 			return $this->html->link($match[1], $match[2]);
 		};
