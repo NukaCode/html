@@ -29,26 +29,6 @@ class FormBuilder extends BaseFormBuilder
         return $options;
     }
 
-    public function getJsInclude()
-    {
-        return implode("\n", $this->jsInclude);
-    }
-
-    public function getJs()
-    {
-        return implode("\n", $this->js);
-    }
-
-    public function getOnReadyJs()
-    {
-        return implode("\n", $this->onReadyJs);
-    }
-
-    public function getCss()
-    {
-        return implode("\n", $this->css);
-    }
-
     protected function addToSection($section, $data)
     {
         if (! array_key_exists($section . 'Form', $this->view->getSections())) {
