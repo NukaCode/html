@@ -9,14 +9,14 @@ Badges
     :target: https://scrutinizer-ci.com/g/NukaCode/Html/?branch=Laravel5
 .. image:: https://scrutinizer-ci.com/g/NukaCode/Html/badges/coverage.png?b=master
     :target: https://scrutinizer-ci.com/g/NukaCode/Html/?branch=master
-.. image:: https://travis-ci.org/NukaCode/Html.svg?branch=master
+.. image:: https://travis-ci.org/NukaCode/html.svg?branch=master
     :target: https://travis-ci.org/NukaCode/Html
 .. image:: https://poser.pugx.org/nukacode/Html/v/stable.svg
     :target: https://packagist.org/packages/nukacode/Html
-.. image:: https://poser.pugx.org/nukacode/Html/downloads.svg
-    :target: https://packagist.org/packages/nukacode/Html
-.. image:: https://poser.pugx.org/nukacode/Html/license.svg
-    :target: https://packagist.org/packages/nukacode/Html
+.. image:: https://poser.pugx.org/nukacode/html/downloads.svg
+    :target: https://packagist.org/packages/nukacode/html
+.. image:: https://poser.pugx.org/nukacode/html/license.svg
+    :target: https://packagist.org/packages/nukacode/html
 =====
 
 Links
